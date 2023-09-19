@@ -8,7 +8,7 @@ export function bookEndList(numbers: number[]): number[] {
     const firstlastNums: number[] = [];
     if (numbers.length > 1) {
         firstlastNums.splice(0, 0, numbers[0]);
-        firstlastNums.splice(1, 0, numbers[numbers.length -1]);
+        firstlastNums.splice(1, 0, numbers[numbers.length - 1]);
         return firstlastNums;
     } else if (numbers.length === 1) {
         firstlastNums.splice(0, 0, numbers[0]);
