@@ -9,7 +9,8 @@ function App(): JSX.Element {
             </header>
             <p>
                 Hello World! This page will automatically reload. Edited By:
-                Dina Dawood
+                Dina Dawood, Ava West, Malika Iyer, Bryant Ferguson, Matthew
+                Mestre
             </p>
         </div>
     );
