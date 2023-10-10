@@ -8,9 +8,8 @@ function App(): JSX.Element {
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <p>
-                Hello World! This page will automatically reload. Edited By:
-                Dina Dawood, Ava West, Malika Iyer, Bryant Ferguson, Matthew
-                Mestre
+                Hello World! Edited By: Dina Dawood, Ava West, Malika Iyer,
+                Bryant Ferguson, Matthew Mestre
             </p>
         </div>
     );
