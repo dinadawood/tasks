@@ -16,18 +16,19 @@ export function TwoDice(): JSX.Element {
     const [die2, setDie2] = useState<number>(1);
     return (
         <div>
-            <span data-testid="left-die">{die1}</span>
-            <span data-testid="right-die">{die2}</span>
             <div>
                 <Button onClick={() => setDie1(d6())}>roll left</Button>
                 <Button onClick={() => setDie2(d6())}>roll right</Button>
             </div>
+            <span data-testid="left-die">{die1}</span>
+            <span data-testid="right-die">{die2}</span>
+            <p></p>
             {die1 === die2 && die1 !== 1 ? (
-                <span>You Win</span>
+                <span>You Win!</span>
             ) : die1 !== die2 ? (
                 <span></span>
             ) : (
-                <span>You Lose</span>
+                <span>You Lose!</span>
             )}
         </div>
     );

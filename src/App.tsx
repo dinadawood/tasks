@@ -12,40 +12,48 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
+                <h5>UD CISC275 with React Hooks and TypeScript</h5>
+                <p>
+                    <h5>Edited By: Dina Dawood</h5>
+                </p>
             </header>
-            <h1>Edited By: Dina Dawood</h1>
-            <p> Hello World!</p>
+            <p></p>
             <img
-                src="https://libawards-prod.s3.amazonaws.com/projects/images/000/002/333/large.png?1505504208"
-                alt="A picture of computer science concepts"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/University_of_Delaware_wordmark.svg/1280px-University_of_Delaware_wordmark.svg.png"
+                alt="UD Logo"
+                height="10%"
+                width="10%"
             />
+            <p></p>
             <Button onClick={() => console.log("Hello World!")}>
                 Log Hello World
             </Button>
             <Container>
                 <Row>
                     <Col>
-                        Some of the most used languages
+                        <p></p>
+                        Popular languages
+                        <p></p>
                         <ul>
                             <li>Python</li>
                             <li>CSS/HTML/Javascript</li>
                             <li>C++</li>
                             <li>Java</li>
                         </ul>
-                        <div
+                        {/* <div
                             style={{
-                                width: 50,
-                                height: 200,
+                                width: 100,
+                                height: 100,
                                 backgroundColor: "red"
                             }}
                         >
                             this will place a red-filled rectangle in each
                             column
-                        </div>
+                        </div> */}
                     </Col>
                     <Col>
-                        Meme
+                        Memes
+                        <p></p>
                         <img
                             height="30%"
                             width="30%"
@@ -59,16 +67,16 @@ function App(): JSX.Element {
                             src="https://miro.medium.com/v2/resize:fit:1400/0*z1mm6izqSeDiKukb"
                             alt="A picture of commenting out code in programming"
                         />
-                        <div
+                        {/* <div
                             style={{
-                                width: 50,
-                                height: 200,
+                                width: 100,
+                                height: 100,
                                 backgroundColor: "red"
                             }}
                         >
                             this will place a red-filled rectangle in each
                             column
-                        </div>
+                        </div> */}
                     </Col>
                 </Row>
             </Container>
