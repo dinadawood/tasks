@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
 import "./App.css";
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
@@ -7,6 +7,10 @@ import { StartAttempt } from "./components/StartAttempt";
 import { TwoDice } from "./components/TwoDice";
 import { CycleHoliday } from "./components/CycleHoliday";
 import { Counter } from "./components/Counter";
+import { DoubleHalf } from "./bad-components/DoubleHalf";
+import { ColoredBox } from "./bad-components/ColoredBox";
+import { ShoveBox } from "./bad-components/ShoveBox";
+import { ChooseTeam } from "./bad-components/ChooseTeam";
 
 function App(): JSX.Element {
     return (
@@ -30,56 +34,33 @@ function App(): JSX.Element {
             </Button>
             <Container>
                 <Row>
-                    <Col>
+                    <div>
                         <p></p>
-                        Popular languages
-                        <p></p>
-                        <ul>
-                            <li>Python</li>
-                            <li>CSS/HTML/Javascript</li>
-                            <li>C++</li>
-                            <li>Java</li>
-                        </ul>
-                        {/* <div
-                            style={{
-                                width: 100,
-                                height: 100,
-                                backgroundColor: "red"
-                            }}
-                        >
-                            this will place a red-filled rectangle in each
-                            column
-                        </div> */}
-                    </Col>
-                    <Col>
-                        Memes
+                        <b>Memes</b>
                         <p></p>
                         <img
-                            height="30%"
-                            width="30%"
+                            height="150px"
+                            width="200px"
                             src="https://vincentdnl.com/_next/image?url=%2Fimages%2Fblog%2Fprogramming-memes%2Fsemicolon2.jpg&w=1080&q=75"
                             alt="A picture of a missing semi-colon meme"
                         />
-                        <p></p>
                         <img
-                            height="30%"
-                            width="30%"
+                            height="150px"
+                            width="200px"
                             src="https://miro.medium.com/v2/resize:fit:1400/0*z1mm6izqSeDiKukb"
                             alt="A picture of commenting out code in programming"
                         />
-                        {/* <div
-                            style={{
-                                width: 100,
-                                height: 100,
-                                backgroundColor: "red"
-                            }}
-                        >
-                            this will place a red-filled rectangle in each
-                            column
-                        </div> */}
-                    </Col>
+                    </div>
                 </Row>
             </Container>
+            <hr></hr>
+            <DoubleHalf></DoubleHalf>
+            <hr></hr>
+            <ChooseTeam></ChooseTeam>
+            <hr></hr>
+            <ColoredBox></ColoredBox>
+            <hr></hr>
+            <ShoveBox></ShoveBox>
             <hr></hr>
             <Counter></Counter>
             <hr />
