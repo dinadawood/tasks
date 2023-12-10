@@ -1,24 +1,20 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-type Holiday = "🎄" | "🐇" | "🎃" | "🎆" | "🌟" | "🦃" | "❤️";
+type Holiday = "🎄" | "🐇" | "🎃" | "🦃" | "❤️";
 const orderByAlphabet: Record<Holiday, Holiday> = {
     "🎄": "🐇",
     "🐇": "🎃",
-    "🎃": "🎆",
-    "🎆": "🌟",
-    "🌟": "🦃",
+    "🎃": "🦃",
     "🦃": "❤️",
     "❤️": "🎄"
 };
 const orderByYear: Record<Holiday, Holiday> = {
     "🎃": "🦃",
     "🦃": "🎄",
-    "🎄": "🌟",
-    "🌟": "❤️",
+    "🎄": "❤️",
     "❤️": "🐇",
-    "🐇": "🎆",
-    "🎆": "🎃"
+    "🐇": "🎃"
 };
 
 export function CycleHoliday(): JSX.Element {
