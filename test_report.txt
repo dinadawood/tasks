@@ -15,19 +15,38 @@ PASS src/objects.test.ts
 PASS src/arrays.test.ts
 PASS src/nested.test.ts
 PASS src/functions.test.ts
-PASS src/components/ChangeType.test.tsx
 PASS src/components/StartAttempt.test.tsx
+PASS src/components/ChangeType.test.tsx
 PASS src/components/TwoDice.test.tsx
 PASS src/components/CycleHoliday.test.tsx
 PASS src/components/Counter.test.tsx
 PASS src/components/RevealAnswer.test.tsx
 PASS src/App.test.tsx
+  ● Console
+
+    console.error
+      Warning: validateDOMNesting(...): <h5> cannot appear as a descendant of <p>.
+          at h5
+          at p
+          at header
+          at div
+          at App
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------------|---------|----------|---------|---------|-------------------
 All files          |   99.49 |      100 |   98.87 |   99.47 |                   
  src               |    99.4 |      100 |   98.61 |   99.37 |                   
-  App.tsx          |      50 |      100 |      50 |      50 | 23                
+  App.tsx          |      50 |      100 |      50 |      50 | 28                
   arrays.ts        |     100 |      100 |     100 |     100 |                   
   functions.ts     |     100 |      100 |     100 |     100 |                   
   nested.ts        |     100 |      100 |     100 |     100 |                   
@@ -47,5 +66,5 @@ All files          |   99.49 |      100 |   98.87 |   99.47 |
 Test Suites: 11 passed, 11 total
 Tests:       93 passed, 93 total
 Snapshots:   0 total
-Time:        5.249 s
+Time:        5.294 s
 Ran all test suites.
