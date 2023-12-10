@@ -15,7 +15,7 @@ function App(): JSX.Element {
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <h1>Edited By: Dina Dawood</h1>
-            {/* <p> Hello World!</p>
+            <p> Hello World!</p>
             <img
                 src="https://libawards-prod.s3.amazonaws.com/projects/images/000/002/333/large.png?1505504208"
                 alt="A picture of computer science concepts"
@@ -71,7 +71,7 @@ function App(): JSX.Element {
                         </div>
                     </Col>
                 </Row>
-            </Container> */}
+            </Container>
             <hr></hr>
             <Counter></Counter>
             <hr />
