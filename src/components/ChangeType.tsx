@@ -20,6 +20,9 @@ export function ChangeType(): JSX.Element {
                 {questionType === "multiple_choice_question" && (
                     <div>Multiple Choice</div>
                 )}
+                {questionType === "short_answer_question" && (
+                    <div>Short Answer</div>
+                )}
             </div>
         </div>
     );
