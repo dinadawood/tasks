@@ -6,6 +6,7 @@ export function StartAttempt(): JSX.Element {
     const [progress, setProgress] = useState<boolean>(false);
     return (
         <div>
+            <span>{attempt}</span>
             <Button
                 onClick={() => [setProgress(true), setAttempt(attempt - 1)]}
                 disabled={progress || attempt === 0}
