@@ -1,5 +1,5 @@
-import React from "react";
-import { Button, Container, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 import "./App.css";
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
@@ -16,6 +16,53 @@ import { GiveAttempts } from "./form-components/GiveAttempts";
 import { EditMode } from "./form-components/EditMode";
 import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
 import { ChangeColor } from "./form-components/ChangeColor";
+import { Quizzer } from "./quizzer/QuizzerComponents/Quizzer";
+
+export function ShowHideTasks(): JSX.Element {
+    const [visible, setVisible] = useState<boolean>(false);
+
+    return (
+        <div>
+            {visible && (
+                <div>
+                    <CheckAnswer expectedAnswer="42"></CheckAnswer>
+                    <hr></hr>
+                    <GiveAttempts></GiveAttempts>
+                    <hr></hr>
+                    <EditMode></EditMode>
+                    <hr></hr>
+                    <ChangeColor></ChangeColor>
+                    <hr></hr>
+                    <MultipleChoiceQuestion
+                        options={["a", "b", "c"]}
+                        expectedAnswer="b"
+                    ></MultipleChoiceQuestion>
+                    <hr></hr>
+                    <DoubleHalf></DoubleHalf>
+                    <hr></hr>
+                    <ChooseTeam></ChooseTeam>
+                    <hr></hr>
+                    <ColoredBox></ColoredBox>
+                    <hr></hr>
+                    <ShoveBox></ShoveBox>
+                    <hr></hr>
+                    <Counter></Counter>
+                    <hr />
+                    <RevealAnswer></RevealAnswer>
+                    <hr />
+                    <StartAttempt></StartAttempt>
+                    <hr />
+                    <TwoDice></TwoDice>
+                    <hr />
+                    <ChangeType></ChangeType>
+                    <hr />
+                    <CycleHoliday></CycleHoliday>
+                </div>
+            )}
+            <Button onClick={() => setVisible(!visible)}>Show/Hide</Button>
+        </div>
+    );
+}
 
 function App(): JSX.Element {
     return (
@@ -26,71 +73,9 @@ function App(): JSX.Element {
                     <h5>Edited By: Dina Dawood</h5>
                 </p>
             </header>
-            <p></p>
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/University_of_Delaware_wordmark.svg/1280px-University_of_Delaware_wordmark.svg.png"
-                alt="UD Logo"
-                height="10%"
-                width="10%"
-            />
-            <p></p>
-            <Button onClick={() => console.log("Hello World!")}>
-                Log Hello World
-            </Button>
-            <Container>
-                <Row>
-                    <div>
-                        <p></p>
-                        <b>Memes</b>
-                        <p></p>
-                        <img
-                            height="150px"
-                            width="200px"
-                            src="https://vincentdnl.com/_next/image?url=%2Fimages%2Fblog%2Fprogramming-memes%2Fsemicolon2.jpg&w=1080&q=75"
-                            alt="A picture of a missing semi-colon meme"
-                        />
-                        <img
-                            height="150px"
-                            width="200px"
-                            src="https://miro.medium.com/v2/resize:fit:1400/0*z1mm6izqSeDiKukb"
-                            alt="A picture of commenting out code in programming"
-                        />
-                    </div>
-                </Row>
-            </Container>
+            <Quizzer></Quizzer>
             <hr></hr>
-            <CheckAnswer expectedAnswer="42"></CheckAnswer>
-            <hr></hr>
-            <GiveAttempts></GiveAttempts>
-            <hr></hr>
-            <EditMode></EditMode>
-            <hr></hr>
-            <ChangeColor></ChangeColor>
-            <hr></hr>
-            <MultipleChoiceQuestion
-                options={["a", "b", "c"]}
-                expectedAnswer="b"
-            ></MultipleChoiceQuestion>
-            <hr></hr>
-            <DoubleHalf></DoubleHalf>
-            <hr></hr>
-            <ChooseTeam></ChooseTeam>
-            <hr></hr>
-            <ColoredBox></ColoredBox>
-            <hr></hr>
-            <ShoveBox></ShoveBox>
-            <hr></hr>
-            <Counter></Counter>
-            <hr />
-            <RevealAnswer></RevealAnswer>
-            <hr />
-            <StartAttempt></StartAttempt>
-            <hr />
-            <TwoDice></TwoDice>
-            <hr />
-            <ChangeType></ChangeType>
-            <hr />
-            <CycleHoliday></CycleHoliday>
+            <ShowHideTasks></ShowHideTasks>
         </div>
     );
 }
