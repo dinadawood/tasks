@@ -1,5 +1,5 @@
 import React from "react";
-import { Question } from "../interfaces/question";
+import { Question } from "../QuizzerInterfaces/question";
 import { Form, Button } from "react-bootstrap";
 
 import "./QuizQuestion.css";
@@ -12,7 +12,14 @@ export const QuizQuestion = ({
     handleSubmit,
     addPoints,
     editQuestionSub
-}: {}) => {
+}: {
+    index: number;
+    question: Question;
+    submitted: boolean;
+    handleSubmit: (index: number) => void;
+    addPoints: (points: number) => void;
+    editQuestionSub: (id: number, body: string) => void;
+}) => {
     const handleClick = (e: ChangeEvent) => {
         if (!submitted) {
             editQuestionSub(question.id, e.target.value);
@@ -54,7 +61,7 @@ export const QuizQuestion = ({
                             {question.options.map(
                                 (option: string, i: number) => (
                                     <Form.Check
-                                        type=""
+                                        type={"checkbox"}
                                         name={"questionChoice" + index}
                                         key={option + " | " + i}
                                         label={option}
