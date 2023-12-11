@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Question } from "../interfaces/question";
-import { Quiz } from "../interfaces/quiz";
+import { Question } from "../QuizzerInterfaces/question";
+import { Quiz } from "../QuizzerInterfaces/quiz";
 import { QuestionEdit } from "./QuestionEdit";
 
 import "./QuizEdit.css";
@@ -12,13 +12,21 @@ export const QuizEdit = ({
     deleteQuiz,
     switchEdit,
     resetView
-}: {) => {
+}: {
+    quiz: Quiz;
+    editQuiz: (id: number, newQuiz: Quiz) => void;
+    deleteQuiz: (id: number) => void;
+    switchEdit: () => void;
+    resetView: () => void;
+}) => {
     const [newQuiz, setNewQuiz] = useState<Quiz>({ ...quiz });
 
     const editQuestion = (questionId: number, newQuestion: Question) => {
         setNewQuiz({
             ...newQuiz,
             questionList: newQuiz.questionList.map(
+                (x: Question): Question =>
+                    x.id === questionId ? (x = newQuestion) : x
             )
         });
     };
@@ -27,6 +35,7 @@ export const QuizEdit = ({
         setNewQuiz({
             ...newQuiz,
             questionList: newQuiz.questionList.filter(
+                (x: Question): boolean => !(x.id === questionId)
             )
         });
     };
@@ -42,7 +51,7 @@ export const QuizEdit = ({
                 (q: Question, idx: number): Question => {
                     if (idx === idx1) return newQuiz.questionList[idx2];
                     if (idx === idx2) return newQuiz.questionList[idx1];
-                    return;
+                    return q;
                 }
             )
         });
@@ -76,12 +85,12 @@ export const QuizEdit = ({
                             checked={newQuiz.published}
                             onChange={(
                                 e: React.ChangeEvent<HTMLInputElement>
-                            ) => {
+                            ) =>
                                 setNewQuiz({
                                     ...newQuiz,
-                                    published: 
-                                });
-                            }}
+                                    title: e.target.value
+                                })
+                            }
                         ></Form.Check>
                     </div>
                     <Form.Label>Description: </Form.Label>
