@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Quiz } from "../interfaces/quiz";
-import { Question, QuestionType } from "../interfaces/question";
+import { Quiz } from "../QuizzerInterfaces/quiz";
+import { Question, QuestionType } from "../QuizzerInterfaces/question";
 import { QuizList } from "./QuizList";
 import { AddQuizModal } from "./AddQuizModal";
 
 import "./Quizzer.css";
-import sample from "../data/quizzes.json";
+import sample from "../QuizzerData/quizzes.json";
 
 const QUIZZES = sample.map(
     (quiz): Quiz => ({
@@ -31,7 +31,16 @@ export const Quizzer = () => {
     }
 
     function addQuiz(title: string, body: string) {
-        setQuizzes([...quizzes, newQuiz]);
+        setQuizzes([
+            ...quizzes,
+            {
+                id: quizzes.length + 1,
+                title: title,
+                body: body,
+                published: false,
+                questionList: []
+            }
+        ]);
     }
 
     function deleteQuiz(qId: number) {
@@ -62,7 +71,6 @@ export const Quizzer = () => {
                 <h2>Completed Features</h2>
                 <ul className="completedList">
                     <li>
-                        {" "}
                         Users can see a list of quizzes, including the quizzes
                         title, description, and how many questions it has
                         (TESTED)
@@ -92,12 +100,9 @@ export const Quizzer = () => {
                         Users can filter the questions in a list so that only
                         published questions are shown (TESTED)
                     </li>
-                    <li>
-                        Users can edit the questions and fields of a quiz
-                        (TESTED)
-                    </li>
+                    <li>Users can edit the questions and fields of a quiz</li>
                     <li>Users can add a new quiz question (TESTED)</li>
-                    <li>Users can delete an existing quiz question (TESTED)</li>
+                    <li>Users can delete an existing quiz question</li>
                     <li>Users can reorder quiz questions (TESTED)</li>
                     <li>Users can add a new quiz (TESTED)</li>
                     <li>Users can delete an existing quiz (TESTED)</li>
